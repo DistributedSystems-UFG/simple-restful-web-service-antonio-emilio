@@ -14,13 +14,13 @@ empDB=[
  {
  'id':'101',
  'name':'Saravanan S',
- 'title':'Technical Leader'
+ 'title':'Technical Leader',
  'salary': '1250'
  },
  {
  'id':'201',
  'name':'Rajkumar P',
- 'title':'Sr Software Engineer'
+ 'title':'Sr Software Engineer',
  'salary': '1000'
  }
  ]
