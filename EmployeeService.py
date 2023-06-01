@@ -15,13 +15,13 @@ empDB=[
  'id':'101',
  'name':'Saravanan S',
  'title':'Technical Leader',
- 'salary': '1250'
+ 'salary': 1250
  },
  {
  'id':'201',
  'name':'Rajkumar P',
  'title':'Sr Software Engineer',
- 'salary': '1000'
+ 'salary': 1000
  }
  ]
 
@@ -45,8 +45,8 @@ def getAverageSalary():
     sum = 0
     for emp in empDB:
         sum += emp['salary']
+        
     return jsonify({'average':sum/len(empDB)})
-
 
 
 @app.route('/empdb/employee/<empId>',methods=['PUT'])
