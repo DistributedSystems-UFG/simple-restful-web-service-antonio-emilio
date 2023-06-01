@@ -22,13 +22,18 @@ def serviceTester():
 
     # Test create_employee endpoint
     api_url = api_base_url
-    employee = {"id":"301", "name":"J. Silva", "title":"Senior Programmer"}
+    employee = {"id":"301", "name":"J. Silva", "title":"Senior Programmer", "salary": 1500}
     response = requests.post(api_url, json=employee)
     print (response.json())
 
     # Test delete_employee endpoint
     api_url = api_base_url + '/101'
     response = requests.delete(api_url)
+    print (response.json())
+
+    # Test get_average_salary endpoint
+    api_url = api_base_url + '/average'
+    response = requests.get(api_url)
     print (response.json())
 
 if __name__ == '__main__':
