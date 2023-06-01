@@ -15,11 +15,13 @@ empDB=[
  'id':'101',
  'name':'Saravanan S',
  'title':'Technical Leader'
+ 'salary': 1250
  },
  {
  'id':'201',
  'name':'Rajkumar P',
  'title':'Sr Software Engineer'
+ 'salary': 1000
  }
  ]
 
@@ -30,7 +32,21 @@ def getAllEmp():
 @app.route('/empdb/employee/<empId>',methods=['GET'])
 def getEmp(empId):
     usr = [ emp for emp in empDB if (emp['id'] == empId) ] 
+    
+    if len(usr) == 0:
+        return jsonify({'response':'Failure, no such employee'})
+        
     return jsonify({'emp':usr})
+
+# retrieve the average salary, considering all the employees;
+
+@app.route('/empdb/employee/average',methods=['GET'])
+def getAverageSalary():
+    sum = 0
+    for emp in empDB:
+        sum += emp['salary']
+    return jsonify({'average':sum/len(empDB)})
+
 
 
 @app.route('/empdb/employee/<empId>',methods=['PUT'])
@@ -45,6 +61,9 @@ def updateEmp(empId):
         if 'title' in request.json:
             em[0]['title'] = request.json['title']
 
+        if 'salary' in request.json:
+            em[0]['salary'] = request.json['salary']
+
     return jsonify(em)
 
 
@@ -55,6 +74,7 @@ def createEmp():
     'id':request.json['id'],
     'name':request.json['name'],
     'title':request.json['title']
+    'salary':request.json['salary']
     }
     empDB.append(dat)
     return jsonify(dat)

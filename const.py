@@ -1,2 +1,2 @@
-IP_ADD = '172.31.91.151'
-PORT = 5678
+IP_ADD = 'localhost'
+PORT = 5000

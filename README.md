@@ -14,3 +14,4 @@ b) check for errors, such as when trying to update information for a employee th
 c) retrieve the average salary, considering all the employees;
 
 d) update the README with documentation of the service´s API (all its endpoints and how to use them).
+
