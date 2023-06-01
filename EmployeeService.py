@@ -73,7 +73,7 @@ def createEmp():
     dat = {
     'id':request.json['id'],
     'name':request.json['name'],
-    'title':request.json['title']
+    'title':request.json['title'],
     'salary':request.json['salary']
     }
     empDB.append(dat)
